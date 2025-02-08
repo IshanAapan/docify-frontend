@@ -1,0 +1,33 @@
+@import url(global.css);
+
+Footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.ApplyDoctorContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 65.9vh;
+}
+
+.specialization,
+.experience,
+.fees,
+.mob {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.specialization input,
+.experience input,
+.fees input,
+.mob input {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    font-size: 16px;
+}

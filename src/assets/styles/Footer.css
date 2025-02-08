@@ -1,0 +1,95 @@
+/* @import url(global.css); */
+
+.footer-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: var(--light-text-color);
+    height: auto;
+    padding: 20px;
+    align-items: flex-start;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.company-name-section {
+    width: 40%;
+    min-width: 280px;
+    margin-bottom: 20px;
+}
+
+h2,
+p,
+.footer-links a,
+h4,
+.get-in-touch {
+    color: var(--white) !important;
+}
+
+.heading {
+    margin: 1rem 0;
+}
+
+p,
+.footer-links,
+.g-i-touch {
+    letter-spacing: 1.5px;
+    line-height: 1.6;
+    word-spacing: 2px;
+}
+
+.g-i-touch {
+    line-height: 1.8;
+    min-width: 280px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 14px;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+
+
+    section {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .company-name-section {
+        width: 100%;
+    }
+
+    .footer-links a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .g-i-touch {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .footer-container {
+        padding: 15px 5px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    p,
+    h4,
+    .footer-links a {
+        font-size: 12px;
+    }
+}

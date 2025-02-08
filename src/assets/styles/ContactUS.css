@@ -1,0 +1,9 @@
+@import url("global.css");
+@import url("Input.css");
+
+.contactus-container {
+    margin: 353px auto;
+}
+h1{
+    font-size: 2.2vw;
+}

@@ -1,0 +1,13 @@
+@import url(global.css);
+
+
+
+.appointmentContainer {
+    margin: 1rem auto;
+    width: 84%;
+}
+
+.appointmentsHeading {
+    margin: 2.5rem 0rem;
+
+}

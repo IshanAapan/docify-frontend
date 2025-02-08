@@ -1,0 +1,16 @@
+@import url(global.css);
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 25px auto;
+}
+
+input {
+    padding: 7px;
+    margin-bottom: 14px;
+    font-size: 1.5vw;
+    border-radius: 8px;
+    border: none;
+}

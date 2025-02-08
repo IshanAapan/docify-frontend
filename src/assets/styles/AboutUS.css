@@ -1,0 +1,30 @@
+@import url("global.css");
+
+h1 {
+    text-align: center;
+    letter-spacing: 0.3rem;
+    font-size: 2.7rem;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* height: 94vh; */
+    margin: 52px auto;
+    width: 80%;
+    gap: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .about-container {
+        display: flex;
+        flex-direction: column;
+        height: 44vh;
+        margin: 115px auto;
+    }
+    .img {
+        width: 70%;
+    }
+
+}

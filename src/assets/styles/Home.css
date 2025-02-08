@@ -1,0 +1,44 @@
+@import url(global.css);
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 94vh;
+    margin: 0 auto;
+    width: 80%;
+    gap: 2rem;
+}
+.leftHomeHeading{
+    width: 54%;
+}
+
+.home-img img {
+    width: 100%;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+
+}
+
+.leftHomeText {
+    color: var(--light-text-color) !important;
+    margin-top: 27px;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 63vh;
+    }
+    .home-img img {
+        width: 70%;
+    }
+}

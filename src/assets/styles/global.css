@@ -1,0 +1,48 @@
+/* global css variable scope */
+:root {
+    /* variables name (must start with --) */
+
+    --background-light-blue: #e9f1fa;
+    --dark-blue: #00abe4;
+    --darker-blue: #0077ff;
+    --white: #fff;
+    --bold-text-color: #1e375a;
+    --light-text-color: rgba(30, 55, 90, 0.7);
+    --font-family: "Poppins", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-light-blue);
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--bold-text-color);
+}
+
+p {
+    color: var(--light-text-color)
+}
+
+button:hover{
+    cursor: pointer;
+}
