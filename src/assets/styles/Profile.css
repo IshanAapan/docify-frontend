@@ -17,7 +17,15 @@
 
 }
 
-input {
+select {
+    margin-bottom: 13px;
+    border-radius: 7px;
+    border: none;
+    background-color: white;
+}
+
+input,
+select {
     font-size: 17px;
     width: 100%;
 }

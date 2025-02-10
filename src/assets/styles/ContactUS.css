@@ -15,3 +15,8 @@
     font-size: 15px;
     width: 100%;
 }
+
+.contact-us-textarea {
+    border-radius: 13px;
+    border: none;
+}

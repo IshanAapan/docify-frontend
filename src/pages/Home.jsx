@@ -59,6 +59,7 @@ const Home = () => {
               cols="30"
               rows="10"
               placeholder="Enter Your Message..."
+              className="contact-us-textarea"
             ></textarea>
             <button className="contactus-btn" type="submit">
               Submit
