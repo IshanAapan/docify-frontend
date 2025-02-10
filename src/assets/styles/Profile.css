@@ -37,6 +37,8 @@ select {
 textarea {
     margin-bottom: 15px;
     padding: 14px;
+    border-radius: 16px;
+    border: none;
 }
 
 .profile-btn {
