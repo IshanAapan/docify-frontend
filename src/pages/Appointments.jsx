@@ -6,7 +6,7 @@ const Appointments = () => {
   return (
     <>
       <div className="appointmentContainer">
-        <h1 className="appointmentsHeading">Your Appointments</h1>
+        <h1 className="appointment-page-heading">Your Appointments</h1>
         <div className="table">
           <Table />
         </div>

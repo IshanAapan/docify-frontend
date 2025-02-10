@@ -39,10 +39,14 @@ h6 {
     color: var(--bold-text-color);
 }
 
-p {
-    color: var(--light-text-color)
+.page-heading,.form-heading {
+    font-size: 2rem;
 }
 
-button:hover{
+p {
+    color: var(--light-text-color);
+}
+
+button:hover {
     cursor: pointer;
 }

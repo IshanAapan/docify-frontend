@@ -37,6 +37,9 @@ p,
     line-height: 1.6;
     word-spacing: 2px;
 }
+.footer-links a{
+    cursor: pointer;
+}
 
 .g-i-touch {
     line-height: 1.8;

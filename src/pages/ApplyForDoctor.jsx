@@ -1,27 +1,25 @@
 import Footer from "../components/Footer";
-import Input from "../components/Input";
 import "../assets/styles/ApplyForDoctor.css";
-import Button from "../components/Button";
 const ApplyForDoctor = () => {
   return (
     <>
       <seciton className="ApplyDoctorContainer">
         <div className="heading">
-          <h1>Apply for Doctors</h1>
+          <h1 className="form-heading">Apply for Doctors</h1>
         </div>
         <div className="specialization">
-          <Input />
+          <input type="text" placeholder="Enter Your Specialization"></input>
         </div>
         <div className="experience">
-          <Input />
+          <input type="number" placeholder="Enter Your Experience (in Years)"></input>
         </div>
         <div className="fees">
-          <Input />
+          <input type="number" placeholder="Enter Your Fees"></input>
         </div>
         <div className="mob">
-          <Input />
+          <input type="tel" placeholder="Enter Your Contact Number"></input>
         </div>
-        <Button />
+        <button className="applydocBtn" type="button">APPLY</button>
       </seciton>
       <Footer />
     </>

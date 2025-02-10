@@ -1,0 +1,24 @@
+@import url("global.css");
+
+.registerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 93vh;
+    width: 45%;
+    margin: auto;
+}
+
+.registerHeading{
+    margin-bottom: 23px;
+}
+
+.register-btn{
+    width: 100%;
+}
+.already-a-user{
+    color: var(--bold-text-color) !important;
+    text-align: center;
+    margin-top: 20px;
+}

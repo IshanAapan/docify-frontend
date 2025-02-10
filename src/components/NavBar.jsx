@@ -1,9 +1,14 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
 import "../assets/styles/NavBar.css";
-import Button from "./Button";
 
 const NavBar = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate("/login");
+  };
+
   return (
     <header>
       <nav>
@@ -37,7 +42,9 @@ const NavBar = () => {
           <li>
             <NavLink to="/profile">Profile</NavLink>
           </li>
-          <Button />
+          <button type="button" onClick={handleLogin}>
+            LOGIN
+          </button>
         </ul>
       </nav>
     </header>

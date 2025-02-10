@@ -1,18 +1,13 @@
 @import url(global.css);
 
-/* Container for arranging cards */
 .Dcards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* 4 cards per row on big screens */
     gap: 1.5rem;
-    padding: 1.5rem;
     justify-content: center;
-    /* max-width: 1200px; */
     width: 85%;
     margin: auto;
 }
-
 
 .card {
     display: flex;
@@ -21,17 +16,13 @@
     border-radius: 10px;
     padding: 1.5rem;
     box-shadow: 0 0 10px 0 rgb(188, 188, 188);
-    /* background: white; */
-    /* color: black; */
-    /* Ensure text is visible */
     text-align: center;
 }
-.Dcommon{
-    color: rgba(30, 55, 90, 0.7)!important;
 
+.Dcommon {
+    color: rgba(30, 55, 90, 0.7) !important;
 }
 
-/* Image Styling */
 .card-img {
     margin: 0 auto;
 }
@@ -57,14 +48,12 @@
     justify-content: flex-start;
 }
 
-/* Button */
 .appointment-btn {
     font-size: 0.9rem;
     padding: 0.8rem;
     margin: 1rem auto;
     width: 100%;
     max-width: 200px;
-    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -72,21 +61,26 @@
 }
 
 .appointment-btn:hover {
-    background-color: #0056b3;
+    background-color: #007bff;
+}
+
+@media screen and (min-width: 768px) {
+    .appointment-btn {
+        width: auto;
+        max-width: none;
+    }
 }
 
 /* Responsive Design */
 @media screen and (max-width: 1024px) {
     .Dcards {
         grid-template-columns: repeat(3, 1fr);
-        /* 3 cards per row on medium screens */
     }
 }
 
 @media screen and (max-width: 768px) {
     .Dcards {
         grid-template-columns: repeat(2, 1fr);
-        /* 2 cards per row on tablets */
         gap: 1rem;
     }
 
@@ -112,7 +106,6 @@
 @media screen and (max-width: 480px) {
     .Dcards {
         grid-template-columns: 1fr;
-        /* 1 card per row on small screens */
     }
 
     .card {

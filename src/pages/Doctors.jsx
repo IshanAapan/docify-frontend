@@ -6,7 +6,7 @@ const Doctors = () => {
     <>
       <div className="doctorContainer">
         <div className="doctorHeading">
-          <h1>Our Doctors</h1>
+          <h1 className="page-heading" style={{margin:"33px 0px"}}>Our Doctors</h1>
         </div>
         <div className="Dcards">
           <DoctorCards />

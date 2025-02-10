@@ -5,6 +5,8 @@ import Appointments from "../pages/Appointments";
 import ApplyForDoctor from "../pages/ApplyForDoctor";
 import Profile from "../pages/Profile";
 import NavBar from "../components/NavBar";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 const AppRoutes = () => {
   return (
     <>
@@ -16,6 +18,8 @@ const AppRoutes = () => {
           <Route path="appointments" element={<Appointments />} />
           <Route path="applyfordoctor" element={<ApplyForDoctor />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </>

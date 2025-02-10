@@ -2,9 +2,21 @@
 
 h1 {
     text-align: center;
-    letter-spacing: 0.3rem;
-    font-size: 2.7rem;
+    letter-spacing: 2px;
 }
+
+.aboutContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.aboutImage {
+    width: 100%;
+    height: auto !;
+}
+
 
 .about-container {
     display: flex;
@@ -16,15 +28,12 @@ h1 {
     gap: 2rem;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1200px) {
     .about-container {
-        display: flex;
+        /* display: flex; */
         flex-direction: column;
         height: 44vh;
-        margin: 115px auto;
-    }
-    .img {
-        width: 70%;
+        /* margin: 115px auto; */
     }
 
 }

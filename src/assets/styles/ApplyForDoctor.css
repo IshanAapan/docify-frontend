@@ -4,6 +4,9 @@ Footer {
     position: absolute;
     bottom: 0;
 }
+.form-heading{
+    margin: 17px 0px;
+}
 
 .ApplyDoctorContainer {
     display: flex;
@@ -11,6 +14,13 @@ Footer {
     justify-content: center;
     align-items: center;
     height: 65.9vh;
+    width: 38%;
+    margin: auto;
+}
+
+.applydocBtn{
+    width: 82%;
+    font-size: 1rem;
 }
 
 .specialization,

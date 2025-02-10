@@ -1,0 +1,23 @@
+@import url("global.css");
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 42%;
+    margin: auto;
+    height: 93vh;
+}
+
+.loginBtn{
+    width: 100%;
+}
+.loginHeading{
+    margin-bottom: 23px;
+}
+.not-a-user{
+    color: var(--bold-text-color) !important;
+    text-align: center;
+    margin-top: 20px;
+}

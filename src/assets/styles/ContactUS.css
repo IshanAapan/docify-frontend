@@ -2,8 +2,16 @@
 @import url("Input.css");
 
 .contactus-container {
-    margin: 353px auto;
+    height: 102vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-h1{
-    font-size: 2.2vw;
+
+
+.contactus-btn {
+
+    font-weight: bold;
+    font-size: 15px;
+    width: 100%;
 }
