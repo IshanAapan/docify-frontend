@@ -51,8 +51,8 @@ const Home = () => {
             <h1 className="form-heading">Contact Us</h1>
           </div>
           <div className="form-fields">
-            <input type="text" placeholder="Enter Your Name"></input>
-            <input type="text" placeholder="Enter Yout Email"></input>
+            <input type="text" placeholder="Full Name"></input>
+            <input type="text" placeholder="email@gmail.com"></input>
             <textarea
               name=""
               id=""

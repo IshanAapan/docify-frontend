@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 88vh;
+    height: 90vh;
     margin: 0 auto;
     width: 80%;
     gap: 2rem;
@@ -12,7 +12,7 @@
 
 .leftHomeHeading {
     width: 54%;
-    height: 37vh;
+    height: 55vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

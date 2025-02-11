@@ -13,15 +13,15 @@ const Profile = () => {
         </div>
         <div className="profileDetails">
           <div className="name input-flex">
-            <input type="text" placeholder="Enter Your First Name" />
-            <input type="text" placeholder="Enter Your Last Name" />
+            <input type="text" placeholder="First Name" />
+            <input type="text" placeholder="Last Name" />
           </div>
           <div className="contactInfo input-flex">
-            <input type="email" placeholder="Enter Your Email" />
-            <input type="tel" placeholder="Enter Your Contact Number" />
+            <input type="email" placeholder="email@gmail.com" />
+            <input type="tel" placeholder="Contact Number" />
           </div>
           <div className="genInfo input-flex">
-            <input type="number" placeholder="Enter Your Age" />
+            <input type="number" placeholder="Age" />
             {/* <input type="number" placeholder="Enter Your Age"/> */}
             <select name="cars" id="cars">
               <option value="Prefer not to say">Prefer not to say</option>
@@ -39,8 +39,8 @@ const Profile = () => {
             ></textarea>
           </div>
           <div className="password input-flex">
-            <input type="password" placeholder="Enter Your Password" />
-            <input type="password" placeholder="Enter Your Confirm Password" />
+            <input type="password" placeholder="Password" />
+            <input type="password" placeholder="Confirm Password" />
           </div>
           <button className="profile-btn" type="submit">
             UPDATE

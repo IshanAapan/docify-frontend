@@ -20,3 +20,9 @@
     border-radius: 13px;
     border: none;
 }
+
+@media only screen and (max-width: 992px) {
+    .form-fields {
+        width: 70%;
+    }
+}

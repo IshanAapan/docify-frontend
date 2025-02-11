@@ -18,10 +18,11 @@ Footer {
     margin: auto;
 }
 
-.applydocBtn{
-    width: 82%;
+/* .applydocBtn{
+    width: 100%%;
     font-size: 1rem;
-}
+    margin: 0px auto;
+} */
 
 .specialization,
 .experience,
@@ -41,3 +42,27 @@ Footer {
     padding: 10px;
     font-size: 16px;
 }
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .ApplyDoctorContainer{
+        width: 100%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .ApplyDoctorContainer{
+        width: 70%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {...} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */
