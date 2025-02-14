@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     height: 93vh;
-    width: 45%;
+    width: 37%;
     margin: auto;
 }
 
@@ -22,3 +22,27 @@
     text-align: center;
     margin-top: 20px;
 }
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 599px) {
+    .registerContainer {
+        width: 80%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px to 767px) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+    .registerContainer {
+        width: 60%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .registerContainer {
+        width: 35%;
+    }
+}
+
+

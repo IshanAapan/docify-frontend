@@ -5,19 +5,43 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 42%;
+    width: 37%;
     margin: auto;
     height: 93vh;
 }
 
-.loginBtn{
+.loginBtn {
     width: 100%;
 }
-.loginHeading{
+
+.loginHeading {
     margin-bottom: 23px;
 }
-.not-a-user{
+
+.not-a-user {
     color: var(--bold-text-color) !important;
     text-align: center;
     margin-top: 20px;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 599px) {
+    .loginContainer {
+        width: 80%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px to 767px) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+    .loginContainer {
+        width: 60%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .loginContainer {
+        width: 50%;
+    }
 }
