@@ -1,25 +1,78 @@
 import Footer from "../components/Footer";
 import "../assets/styles/ApplyForDoctor.css";
+import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 const ApplyForDoctor = () => {
+  const [formData, setFormData] = useState({
+    specialization: "",
+    experience: "",
+    fees: "",
+    contactNumber: "",
+  });
+  const handleInputField = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("FormData", formData);
+    const {specialization,experience, fees, contactNumber}=formData;
+    if(!specialization || !experience || !fees || !contactNumber){
+      toast.error("All Fields are required")
+    }
+    else if(specialization.length<3){
+      toast.error("Specialization should be at least 3 letter")
+    }
+    else if(experience<=0){
+      toast.error("Experience should be at least 1 year")
+    }
+    else if(fees<=0){
+      toast.error("Fess should be greater than 0")
+    }
+    else if(contactNumber.length<10 || contactNumber.length>10){
+      toast.error("Invalid Contact Number")
+    }
+    
+  };
   return (
     <>
-      <section className="ApplyDoctorContainer">
-        <div className="heading">
-          <h1 className="form-heading">Apply For Doctor</h1>
-        </div>
-        <div className="form-fields">
-          <input type="text" placeholder="Enter Your Specialization"></input>
-          <input
-            type="number"
-            placeholder="Enter Your Experience (in Years)"
-          ></input>
-          <input type="number" placeholder="Enter Your Fees"></input>
-          <input type="tel" placeholder="Enter Your Contact Number"></input>
-          <button className="apply-btn" type="submit">
-            APPLY
-          </button>
-        </div>
-      </section>
+      <form onSubmit={handleSubmit}>
+        <section className="ApplyDoctorContainer">
+          <div className="heading">
+            <h1 className="form-heading">Apply For Doctor</h1>
+          </div>
+          <div className="form-fields">
+            <input
+              type="text"
+              placeholder="Enter Your Specialization"
+              name="specialization"
+              onChange={handleInputField}
+            ></input>
+            <input
+              type="number"
+              placeholder="Enter Your Experience (in Years)"
+              name="experience"
+              onChange={handleInputField}
+            ></input>
+            <input
+              type="number"
+              placeholder="Enter Your Fees"
+              name="fees"
+              onChange={handleInputField}
+            ></input>
+            <input
+              type="tel"
+              placeholder="Enter Your Contact Number"
+              name="contactNumber"
+              onChange={handleInputField}
+            ></input>
+            <button className="apply-btn" type="submit">
+              APPLY
+            </button>
+            <ToastContainer/>
+          </div>
+        </section>
+      </form>
       <Footer />
     </>
   );

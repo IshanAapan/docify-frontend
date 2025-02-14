@@ -4,8 +4,39 @@ import "../assets/styles/AboutUS.css";
 import aboutImage from "../assets/images/AboutUS.jpg";
 import "../assets/styles/ContactUS.css";
 import Footer from "../components/Footer";
+import { useState } from "react";
+import { ToastContainer,toast } from "react-toastify";
 
 const Home = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    msg: "",
+  });
+
+  const handleInputField = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("FormData",formData);
+    const{fullName,email,msg}=formData
+    if(!fullName || !email || !msg){
+      toast.error("All the fields are required!")
+    }
+    else if(fullName.length<3){
+      toast.error("Name length should be at least 3")
+    }
+    else if(msg.length<10){
+      toast.error("Message should be long")
+    }
+    else{
+      toast.success("Form Submitted Successfully!")
+    }
+  };
+
   return (
     <>
       <section className="container" id="home">
@@ -47,24 +78,41 @@ const Home = () => {
       {/* Contact Us Section */}
       <section id="contactus">
         <div className="contactus-container">
-          <div className="heading">
-            <h1 className="form-heading">Contact Us</h1>
-          </div>
-          <div className="form-fields">
-            <input type="text" placeholder="Full Name"></input>
-            <input type="text" placeholder="email@gmail.com"></input>
-            <textarea
-              name=""
-              id=""
-              cols="30"
-              rows="10"
-              placeholder="Enter Your Message..."
-              className="contact-us-textarea"
-            ></textarea>
-            <button className="contactus-btn" type="submit">
-              Submit
-            </button>
-          </div>
+          <form onSubmit={handleSubmit}>
+            <div className="heading">
+              <h1 className="form-heading">Contact Us</h1>
+            </div>
+            <div className="form-fields">
+              <input
+                type="text"
+                value={formData.fullName}
+                placeholder="Full Name"
+                name="fullName"
+                onChange={handleInputField}
+              ></input>
+              <input
+                type="email"
+                value={formData.email}
+                placeholder="email@gmail.com"
+                name="email"
+                onChange={handleInputField}
+              ></input>
+              <textarea
+                name="msg"
+                value={formData.msg}
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="Enter Your Message..."
+                className="contact-us-textarea"
+                onChange={handleInputField}
+              ></textarea>
+              <button className="contactus-btn" type="Submit">
+                Submit
+              </button>
+              <ToastContainer/>
+            </div>
+          </form>
         </div>
       </section>
 
