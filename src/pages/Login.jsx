@@ -50,7 +50,7 @@ const Login = () => {
               LOGIN
             </button>
             <p className="not-a-user">
-              Not a user? <a href="signup">Register Here</a>
+              Not a user? <a href="./Register.jsx">Register Here</a>
             </p>
             <ToastContainer />
           </div>

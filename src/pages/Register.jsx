@@ -87,7 +87,7 @@ const Register = () => {
               SIGN UP
             </button>
             <p className="already-a-user">
-              Already a user? <a href="login">Login Here</a>
+              Already a user? <a href="./Login.jsx">Login Here</a>
             </p>
             <ToastContainer />
           </div>
