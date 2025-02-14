@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../assets/styles/Login.css";
 import { toast, ToastContainer } from "react-toastify";
+import { Link } from "react-router-dom";
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -50,7 +51,7 @@ const Login = () => {
               LOGIN
             </button>
             <p className="not-a-user">
-              Not a user? <a href="./Register.jsx">Register Here</a>
+              Not a user? <Link href="./Register.jsx">Register Here</Link>
             </p>
             <ToastContainer />
           </div>
