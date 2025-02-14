@@ -51,7 +51,7 @@ const Login = () => {
               LOGIN
             </button>
             <p className="not-a-user">
-              Not a user? <Link href="./Register.jsx">Register Here</Link>
+              Not a user? <Link to="/signup">Register Here</Link>
             </p>
             <ToastContainer />
           </div>
