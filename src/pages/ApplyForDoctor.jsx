@@ -32,6 +32,9 @@ const ApplyForDoctor = () => {
     else if(contactNumber.length<10 || contactNumber.length>10){
       toast.error("Invalid Contact Number")
     }
+    else{
+      toast.success("Form Submitted Successfully!")
+    }
     
   };
   return (

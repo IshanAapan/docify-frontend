@@ -20,24 +20,20 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("FormData", formData);
-    const {firstName,lastName,email,password,cpassword,file}=formData;
-    if(!firstName || !lastName || !email || !password || !cpassword || !file)
-    {
-      toast.error("All fields are required")
-    }
-    else if(firstName.length<3){
+    const { firstName, lastName, email, password, cpassword, file } = formData;
+    if (!firstName || !lastName || !email || !password || !cpassword || !file) {
+      toast.error("All fields are required");
+    } else if (firstName.length < 3) {
       toast.error("First Name should be long");
-    }
-    else if(lastName.length<3){
+    } else if (lastName.length < 3) {
       toast.error("First Name should be long");
+    } else if (password.length < 8) {
+      toast.error("Password's length should be at least 8 characters");
+    } else if (password !== cpassword) {
+      toast.error("Invalid Password");
+    } else {
+      toast.success("Form Submitted Successfully!");
     }
-    else if(password.length<8){
-      toast.error("Password's length should be at least 8 characters")
-    }
-    else if(password!==cpassword){
-      toast.error("Invalid Password")
-    }
-    
   };
   return (
     <>
@@ -93,7 +89,7 @@ const Register = () => {
             <p className="already-a-user">
               Already a user? <a href="login">Login Here</a>
             </p>
-            <ToastContainer/>
+            <ToastContainer />
           </div>
         </div>
       </form>

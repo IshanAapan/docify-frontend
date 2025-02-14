@@ -5,7 +5,7 @@ import aboutImage from "../assets/images/AboutUS.jpg";
 import "../assets/styles/ContactUS.css";
 import Footer from "../components/Footer";
 import { useState } from "react";
-import { ToastContainer,toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 const Home = () => {
   const [formData, setFormData] = useState({
@@ -21,19 +21,16 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("FormData",formData);
-    const{fullName,email,msg}=formData
-    if(!fullName || !email || !msg){
-      toast.error("All the fields are required!")
-    }
-    else if(fullName.length<3){
-      toast.error("Name length should be at least 3")
-    }
-    else if(msg.length<10){
-      toast.error("Message should be long")
-    }
-    else{
-      toast.success("Form Submitted Successfully!")
+    console.log("FormData", formData);
+    const { fullName, email, msg } = formData;
+    if (!fullName || !email || !msg) {
+      toast.error("All the fields are required!");
+    } else if (fullName.length < 3) {
+      toast.error("Name length should be at least 3");
+    } else if (msg.length < 10) {
+      toast.error("Message should be long");
+    } else {
+      toast.success("Form Submitted Successfully!");
     }
   };
 
@@ -110,7 +107,7 @@ const Home = () => {
               <button className="contactus-btn" type="Submit">
                 Submit
               </button>
-              <ToastContainer/>
+              <ToastContainer />
             </div>
           </form>
         </div>

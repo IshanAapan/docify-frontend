@@ -13,15 +13,16 @@ const Login = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     console.log("FormData", formData);
-    const {email,password}=formData;
+    const { email, password } = formData;
 
-    if(!email || !password){
-      toast.error("All fields are required")
-    }
-    else if(password.length<8){
-      toast.error("Invalid Password!")
+    if (!email || !password) {
+      toast.error("All fields are required");
+    } else if (password.length < 8) {
+      toast.error("Invalid Password!");
+    } else {
+      toast.success("Form Submitted Successfully!");
     }
   };
 
@@ -51,7 +52,7 @@ const Login = () => {
             <p className="not-a-user">
               Not a user? <a href="signup">Register Here</a>
             </p>
-            <ToastContainer/>
+            <ToastContainer />
           </div>
         </div>
       </form>

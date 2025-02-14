@@ -8,11 +8,10 @@ const Profile = () => {
     email: "",
     mob: "",
     age: "",
-    gender:"",
-    address:"",
-    password:"",
-    cpassword:""
-
+    gender: "",
+    address: "",
+    password: "",
+    cpassword: "",
   });
   const handleInputField = (e) => {
     const { name, value } = e.target;
@@ -21,27 +20,43 @@ const Profile = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("FormData", formData);
-    const{firstName,lastName,email,mob,age,gender,address,password,cpassword}=formData;
-    if(!firstName || !lastName || !email || !mob || !age || !gender || !address || !password || !cpassword){
-      toast.error("All fields are required")
-    }
-    else if(firstName.length<3){
-      toast.error("Fist Name Should long")
-    }
-    else if(lastName.length<3){
-      toast.error("Last Name Should long")
-    }
-    else if(mob.length>10 || mob.length<10){
-      toast.error("Invalid contact number")
-    }
-    else if(age<1){
-      toast.error("Invalid age")
-    }
-    else if(password.length<8){
-      toast.error("Password should be at least 8 Characters")
-    }
-    else if(password!==cpassword){
-      toast.error("Password and Confirm Password does'not match")
+    const {
+      firstName,
+      lastName,
+      email,
+      mob,
+      age,
+      gender,
+      address,
+      password,
+      cpassword,
+    } = formData;
+    if (
+      !firstName ||
+      !lastName ||
+      !email ||
+      !mob ||
+      !age ||
+      !gender ||
+      !address ||
+      !password ||
+      !cpassword
+    ) {
+      toast.error("All fields are required");
+    } else if (firstName.length < 3) {
+      toast.error("Fist Name Should long");
+    } else if (lastName.length < 3) {
+      toast.error("Last Name Should long");
+    } else if (mob.length > 10 || mob.length < 10) {
+      toast.error("Invalid contact number");
+    } else if (age < 1) {
+      toast.error("Invalid age");
+    } else if (password.length < 8) {
+      toast.error("Password should be at least 8 Characters");
+    } else if (password !== cpassword) {
+      toast.error("Password and Confirm Password does'not match");
+    } else {
+      toast.success("Form Submitted Successfully!");
     }
   };
   return (
@@ -127,7 +142,7 @@ const Profile = () => {
             <button type="submit" className="profile-btn">
               UPDATE
             </button>
-            <ToastContainer/>
+            <ToastContainer />
           </div>
         </div>
       </form>
