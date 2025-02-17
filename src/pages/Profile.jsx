@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../assets/styles/Profile.css";
 import { toast, ToastContainer } from "react-toastify";
+import NavBar from "../components/NavBar";
 const Profile = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -61,6 +62,7 @@ const Profile = () => {
   };
   return (
     <>
+      <NavBar />
       <form onSubmit={handleSubmit}>
         <div className="profileContainer">
           <h1 className="profileHeading">Profile</h1>

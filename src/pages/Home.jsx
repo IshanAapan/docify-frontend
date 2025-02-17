@@ -6,6 +6,7 @@ import "../assets/styles/ContactUS.css";
 import Footer from "../components/Footer";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import NavBar from "../components/NavBar";
 
 const Home = () => {
   const [formData, setFormData] = useState({
@@ -36,6 +37,7 @@ const Home = () => {
 
   return (
     <>
+    <NavBar/>
       <section className="container" id="home">
         <section className="leftHomeHeading">
           <h1 className="page-heading">Your Health,</h1>

@@ -2,6 +2,7 @@ import Footer from "../components/Footer";
 import "../assets/styles/ApplyForDoctor.css";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
+import NavBar from "../components/NavBar";
 const ApplyForDoctor = () => {
   const [formData, setFormData] = useState({
     specialization: "",
@@ -16,29 +17,24 @@ const ApplyForDoctor = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("FormData", formData);
-    const {specialization,experience, fees, contactNumber}=formData;
-    if(!specialization || !experience || !fees || !contactNumber){
-      toast.error("All Fields are required")
+    const { specialization, experience, fees, contactNumber } = formData;
+    if (!specialization || !experience || !fees || !contactNumber) {
+      toast.error("All Fields are required");
+    } else if (specialization.length < 3) {
+      toast.error("Specialization should be at least 3 letter");
+    } else if (experience <= 0) {
+      toast.error("Experience should be at least 1 year");
+    } else if (fees <= 0) {
+      toast.error("Fess should be greater than 0");
+    } else if (contactNumber.length < 10 || contactNumber.length > 10) {
+      toast.error("Invalid Contact Number");
+    } else {
+      toast.success("Form Submitted Successfully!");
     }
-    else if(specialization.length<3){
-      toast.error("Specialization should be at least 3 letter")
-    }
-    else if(experience<=0){
-      toast.error("Experience should be at least 1 year")
-    }
-    else if(fees<=0){
-      toast.error("Fess should be greater than 0")
-    }
-    else if(contactNumber.length<10 || contactNumber.length>10){
-      toast.error("Invalid Contact Number")
-    }
-    else{
-      toast.success("Form Submitted Successfully!")
-    }
-    
   };
   return (
     <>
+      <NavBar />
       <form onSubmit={handleSubmit}>
         <section className="ApplyDoctorContainer">
           <div className="heading">
@@ -72,7 +68,7 @@ const ApplyForDoctor = () => {
             <button className="apply-btn" type="submit">
               APPLY
             </button>
-            <ToastContainer/>
+            <ToastContainer />
           </div>
         </section>
       </form>
