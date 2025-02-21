@@ -1,5 +1,15 @@
+import { useState } from "react";
 import "../assets/styles/DoctorCards.css";
+import BookingAppointmenModal from "./BookingAppointmenModal";
 const DoctorCards = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+
+  const handleButton = () => {
+    console.log("you are click button!!!");
+    setModalOpen(true);
+  };
+
   return (
     <div className={`card`}>
       <div className={`card-img flex-center`}>
@@ -26,7 +36,11 @@ const DoctorCards = () => {
         <strong>Phone: </strong>
         9874561230
       </p>
-      <button className="btn appointment-btn">Book Appointment</button>
+      <button className="btn appointment-btn" onClick={handleButton}>
+        Book Appointment
+      </button>
+      {modalOpen&&(<BookingAppointmenModal
+      setModalOpen={setModalOpen}/>)}
     </div>
   );
 };

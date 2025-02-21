@@ -3,7 +3,7 @@
 .Dcards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    gap: 2.5rem;
     justify-content: center;
     width: 85%;
     margin: auto;
@@ -83,7 +83,7 @@
 @media screen and (max-width: 768px) {
     .Dcards {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        gap: 2rem;
     }
 
     .card {
@@ -108,6 +108,7 @@
 @media screen and (max-width: 480px) {
     .Dcards {
         grid-template-columns: 1fr;
+        gap:2rem
     }
 
     .card {
