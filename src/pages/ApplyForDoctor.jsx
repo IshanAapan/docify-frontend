@@ -3,6 +3,7 @@ import "../assets/styles/ApplyForDoctor.css";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import NavBar from "../components/NavBar";
+import { applyForDoctor } from "../services/Doctor";
 const ApplyForDoctor = () => {
   const [formData, setFormData] = useState({
     specialization: "",
@@ -29,9 +30,46 @@ const ApplyForDoctor = () => {
     } else if (contactNumber.length < 10 || contactNumber.length > 10) {
       toast.error("Invalid Contact Number");
     } else {
-      toast.success("Form Submitted Successfully!");
+      handleApplyForDoctor(formData)
     }
   };
+
+
+  const handleApplyForDoctor = async (formData) => {
+    try {
+      const resp = await applyForDoctor(formData);
+      console.log("Apply for Doctor resp", resp);
+      setFormData({
+        specialization: "",
+        experience: "",
+        fees: "",
+        contactNumber: "",
+      })
+      toast.success("Application Submitted Successfully!");
+
+    } catch (error) {
+      if (error !== 201) {
+        setFormData({
+          specialization: "",
+          experience: "",
+          fees: "",
+          contactNumber: "",
+        })
+        toast.error("User unable to Apply for a Doctor")
+      }
+      if (error === 404) {
+        setFormData({
+          specialization: "",
+          experience: "",
+          fees: "",
+          contactNumber: "",
+        })
+        toast.error("User Not found")
+      }
+
+    }
+  }
+
   return (
     <>
       <NavBar />

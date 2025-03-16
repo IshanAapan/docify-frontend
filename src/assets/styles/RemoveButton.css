@@ -1,0 +1,7 @@
+.removeBtn {
+    background-color: #e09696;
+}
+
+.removeBtn:hover {
+    background-color: rgba(225, 87, 87, 1);
+}

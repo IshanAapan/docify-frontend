@@ -2,6 +2,8 @@ import { useState } from "react";
 import "../assets/styles/Profile.css";
 import { toast, ToastContainer } from "react-toastify";
 import NavBar from "../components/NavBar";
+import { ProfileUpdate } from "../services/UserService";
+
 const Profile = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -14,13 +16,16 @@ const Profile = () => {
     password: "",
     cpassword: "",
   });
+
   const handleInputField = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("FormData", formData);
+    // console.log("FormData", formData);
     const {
       firstName,
       lastName,
@@ -57,9 +62,35 @@ const Profile = () => {
     } else if (password !== cpassword) {
       toast.error("Password and Confirm Password does'not match");
     } else {
-      toast.success("Form Submitted Successfully!");
+      updateProfile(formData)
     }
   };
+
+
+  const updateProfile = async (formData) => {
+    try {
+      const resp = await ProfileUpdate(formData);
+      toast.success("Form Submitted Successfully!");
+      console.log("resp", resp);
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        mob: "",
+        age: "",
+        gender: "",
+        address: "",
+        password: "",
+        cpassword: "",
+      })
+    } catch (error) {
+      toast.error("Error submitting form");
+      console.log(error);
+    }
+  }
+
+
+
   return (
     <>
       <NavBar />

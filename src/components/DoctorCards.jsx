@@ -1,7 +1,12 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
 import "../assets/styles/DoctorCards.css";
 import BookingAppointmenModal from "./BookingAppointmenModal";
-const DoctorCards = () => {
+
+
+const DoctorCards = ({ elem }) => {
+  console.log("elem", elem);
+
   const [modalOpen, setModalOpen] = useState(false);
 
 
@@ -20,29 +25,37 @@ const DoctorCards = () => {
           alt="profile"
         />
       </div>
-      <h3 className="card-name Dcommon">Dr. Lawrence Espinoza</h3>
+      <h3 className="card-name Dcommon">Dr. {elem.firstName + " " + elem.lastName}</h3>
       <p className="Dspecialization Dcommon">
         <strong>Specialization: </strong>
-        Heart
+        {elem.specialization}
       </p>
       <p className="Dexperience Dcommon">
         <strong>Experience: </strong>
-        10yrs
+        {elem.experience}
       </p>
       <p className="Dfees Dcommon">
         <strong>Fees: </strong>
+        {elem.fees}
       </p>
       <p className="Dphone Dcommon">
         <strong>Phone: </strong>
-        9874561230
+        {elem.contactNumber}
       </p>
       <button className="btn appointment-btn" onClick={handleButton}>
         Book Appointment
       </button>
-      {modalOpen&&(<BookingAppointmenModal
-      setModalOpen={setModalOpen}/>)}
+      {modalOpen && (<BookingAppointmenModal
+        setModalOpen={setModalOpen}
+        doctor={elem}
+      />)}
     </div>
   );
+};
+DoctorCards.propTypes = {
+  elem: PropTypes.shape({
+    firstName: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default DoctorCards;

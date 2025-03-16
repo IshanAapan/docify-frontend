@@ -1,12 +1,19 @@
 import { useState } from "react";
 import "../assets/styles/Login.css";
 import { toast, ToastContainer } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { loginU } from "../services/AuthServices";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+
 const Login = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+
+  const { fetchData, setFetchData } = useContext(AuthContext);
 
   const handleInputField = (e) => {
     const { name, value } = e.target;
@@ -15,7 +22,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("FormData", formData);
+    // console.log("FormData", formData);
     const { email, password } = formData;
 
     if (!email || !password) {
@@ -23,9 +30,36 @@ const Login = () => {
     } else if (password.length < 8) {
       toast.error("Invalid Password!");
     } else {
-      toast.success("Form Submitted Successfully!");
+      login(formData);
     }
   };
+  console.log("fetchData", fetchData);
+
+
+  const login = async (formData) => {
+    try {
+      const resp = await loginU(formData);
+      console.log("resp", resp);
+      const token = resp.data.token;
+      localStorage.setItem("token", token);
+      const role = resp.data.user.role;
+      localStorage.setItem("role", role)
+      setFetchData(resp.data.user)
+      // navigate("/")
+      if (role === "admin") {
+        navigate("/dashboard/users", {replace:true});
+      }
+      else{
+        navigate("/")
+      }
+    } catch (error) {
+      console.log(error);
+      if (error.status) {
+        toast.error("Unable to Login");
+      }
+    }
+  };
+
 
   return (
     <>

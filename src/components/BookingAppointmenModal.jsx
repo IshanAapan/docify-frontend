@@ -2,27 +2,70 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import "../assets/styles/BookingAppointmentModal.css";
 import { IoMdClose } from "react-icons/io";
-const BookingAppointmenModal = ({ setModalOpen }) => {
+import { toast, ToastContainer } from "react-toastify";
+import { bookAppointment } from "../services/AppointmentServices";
+
+
+
+const BookingAppointmenModal = ({ setModalOpen, doctor }) => {
+
+
   const [formData, setFormData] = useState({
-    date: "",
-    time: "",
+    appointmentDate: "",
+    appointmentTime: "",
   });
+
 
   const inputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const { date, time } = formData;
-
-  const handleBookAppointment = () => {
-    console.log("okkkk");
-
-    setModalOpen(false);
+  BookingAppointmenModal.propTypes = {
+    setModalOpen: PropTypes.func.isRequired,
+    doctor: PropTypes.object.isRequired,
   };
 
+  const { appointmentDate, appointmentTime } = formData;
+
+  const handleBookAppointment = (e) => {
+    e.preventDefault();
+
+    const token = localStorage.getItem("token");
+    console.log("token", token);
+
+    if (!token) {
+      toast.error("You must login first")
+      return;
+    }
+    else if (!appointmentDate || !appointmentTime) {
+      toast.error("Unable to Book Appointment");
+      setModalOpen(true);
+      return;
+    }
+    else {
+      bookingAppointment(formData, doctor);
+      setFormData({ appointmentDate: "", appointmentTime: "" });
+      setModalOpen(true);
+    }
+  };
+
+  const bookingAppointment = async (formData, doctor) => {
+
+    try {
+      console.log("Inside the booking Appointment", formData,doctor);
+      const resp = await bookAppointment(formData, doctor);
+      console.log("Doctors", doctor);
+      console.log("resp", resp);
+      toast.success("Your Booking Successfully Completed");
+    } catch (error) {
+      console.log("error", error);
+
+    }
+
+  }
+
   const handleClose = () => {
-    console.log("close...");
     setModalOpen(false);
   };
 
@@ -40,30 +83,30 @@ const BookingAppointmenModal = ({ setModalOpen }) => {
             style={{ cursor: "pointer" }} // Make it clear it's clickable
           />
           <div className="register-container flex-center book">
-            <form className="register-form">
+            <form className="register-form" onSubmit={handleBookAppointment}>
               <input
                 type="date"
-                name="date"
+                name="appointmentDate"
                 className="form-input"
-                value={date}
+                value={appointmentDate}
                 onChange={inputChange}
                 required
               />
               <input
                 type="time"
-                name="time"
+                name="appointmentTime"
                 className="form-input"
-                value={time}
+                value={appointmentTime}
                 onChange={inputChange}
                 required
               />
               <button
                 type="submit"
                 className="btn form-btn"
-                onClick={handleBookAppointment}
               >
                 Book
               </button>
+              <ToastContainer />
             </form>
           </div>
         </div>

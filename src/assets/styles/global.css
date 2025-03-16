@@ -24,6 +24,7 @@ html {
 body {
     font-family: var(--font-family);
     background-color: var(--background-light-blue);
+    user-select: none;
 }
 
 a {
@@ -37,9 +38,11 @@ h4,
 h5,
 h6 {
     color: var(--bold-text-color);
+    user-select: none;
 }
 
-.page-heading,.form-heading {
+.page-heading,
+.form-heading {
     font-size: 2rem;
 }
 

@@ -20,11 +20,16 @@ const Home = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  const token = localStorage.getItem("token");
+  console.log("tokenContact us", token);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("FormData", formData);
+    // console.log("FormData", formData);
     const { fullName, email, msg } = formData;
-    if (!fullName || !email || !msg) {
+    if (!token) {
+      toast.error("You Must Login first");
+    } else if (!fullName || !email || !msg) {
       toast.error("All the fields are required!");
     } else if (fullName.length < 3) {
       toast.error("Name length should be at least 3");
@@ -37,7 +42,7 @@ const Home = () => {
 
   return (
     <>
-    <NavBar/>
+      <NavBar />
       <section className="container" id="home">
         <section className="leftHomeHeading">
           <h1 className="page-heading">Your Health,</h1>

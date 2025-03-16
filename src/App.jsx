@@ -1,10 +1,13 @@
 import "./assets/styles/global.css";
+import { AuthContextProvider } from "./context/AuthProvider";
 import AppRoutes from "./routes/AppRoutes";
 
 const App = () => {
   return (
     <>
-      <AppRoutes />
+      <AuthContextProvider>
+        <AppRoutes />
+      </AuthContextProvider>
     </>
   );
 };
