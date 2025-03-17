@@ -45,41 +45,12 @@ const AdminTable = ({ tableName, data, setData }) => {
 
             console.log(`API Response for deleting ${tableName}:`, response);
 
-            setData((prevData) => prevData.filter((item) => item._id !== id)); // Remove from UI
+            setData((prevData) => prevData.filter((item) => item._id !== id)); 
             console.log(`${tableName} deleted successfully`);
         } catch (error) {
             console.error(`Error deleting ${tableName}:`, error.response ? error.response.data : error);
         }
     }
-
-
-
-    // const handleUserRemoveBtn = async (id) => {
-    //     try {
-    //         let response;
-    //         if (tableName === "User") {
-    //             response = await deleteUser(id);
-    //         } else if (tableName === "Doctors") {
-    //             console.log("Updating doctor role to patient", id);
-    //             response = await changeDoctorRole(id); // Change role instead of deleting
-    //         }
-
-    //         console.log(`API Response for updating ${tableName}:`, response);
-
-    //         // Update UI to reflect role change
-    //         setData((prevData) =>
-    //             prevData.map((item) =>
-    //                 item._id === id ? { ...item, role: "Patient" } : item
-    //             )
-    //         );
-
-    //         console.log(`${tableName} role changed successfully`);
-    //     } catch (error) {
-    //         console.error(`Error updating ${tableName}:`, error.response ? error.response.data : error);
-    //     }
-    // };
-
-
 
 
     return (
