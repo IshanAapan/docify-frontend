@@ -1,4 +1,4 @@
-# Docify - Doctor Appointment System 🏥
+# Docify Frontend - Doctor Appointment System 🏥
 
 ### Live Demo:- https://doci-beta.vercel.app/
 
