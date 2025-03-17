@@ -38,7 +38,7 @@
 - **Profile**  
 
 ## Tech Stack  
-- **Frontend:** React + Vite, CSS, Axios ⚡  
+- **Frontend:** React + Vite⚡,CSS, Axios  
 - **Backend:** Node.js, Express.js  
 - **Database:** MongoDB 
 
