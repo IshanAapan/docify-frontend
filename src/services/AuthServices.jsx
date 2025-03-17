@@ -3,7 +3,8 @@ import axios from "axios";
 
 // create an axios instance
 const api = axios.create({
-  baseURL: "http://localhost:5000/api/auth",
+  // baseURL: "http://localhost:5000/api/auth",
+  baseURL: "https://docify-backend-9aos.onrender.com/api/auth",
 });
 
 

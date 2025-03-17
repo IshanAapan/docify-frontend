@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const api = axios.create({ baseURL: "http://localhost:5000/api/appointments" })
+const api = axios.create({ baseURL: "https://docify-backend-9aos.onrender.com/api/appointments" })
 
 
 api.interceptors.request.use((config) => {
