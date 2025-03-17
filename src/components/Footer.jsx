@@ -29,21 +29,26 @@ const Footer = () => {
             <li>
               <NavLink to="/">Home</NavLink>
             </li>
-            <li>
-              <NavLink to="/doctors">Doctors</NavLink>
-            </li>
+            {role !== "doctor" && (
+              <li>
+                <NavLink to="/doctors">Doctors</NavLink>
+              </li>
+            )}
             {token && (
               <>
                 <li>
                   <NavLink to="/appointments">Appointments</NavLink>
                 </li>
-                {role !== "admin" ? (
-                <li>
-                  <NavLink to="/applyfordoctor">Apply for Doctor</NavLink>
-                </li>
-              ) : (<li>
-                <NavLink to="/dashboard/users">DashBoard</NavLink>
-              </li>)}
+                {role === "patient" && (
+                  <li>
+                    <NavLink to="/applyfordoctor">Apply for Doctor</NavLink>
+                  </li>
+                )}
+                {role === "admin" && (
+                  <li>
+                    <NavLink to="/dashboard/users">DashBoard</NavLink>
+                  </li>
+                )}
               </>
             )}
             <li>

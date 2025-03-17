@@ -38,10 +38,8 @@ const Table = ({ data }) => {
           <tr>
             <th>S.No</th>
             {role === "doctor" ? (
-              <th>Patients</th>
-            ) : <th>Doctors</th>}
-            {role !== "patient" && (
-              <th>Patients</th>)}
+              <th>Patients Name</th>
+            ) : <th>Doctors Name</th>}
             <th>Appointment Date</th>
             <th>Appointment Time</th>
             <th>Booking Date</th>
