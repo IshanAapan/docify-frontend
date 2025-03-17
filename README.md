@@ -53,4 +53,4 @@
   
 3️⃣ Start the development server:
   npm run dev
-🚀 Now, open http://localhost:5173/ in your browser to use Docify!
+## 🚀 Now, open http://localhost:5173/ in your browser to use Docify!
