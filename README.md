@@ -43,7 +43,7 @@ Database: MongoDB
 
 Installation & Setup
 1️⃣ Clone the repository:
-  git clone https://github.com/your-repo/docify.git
+   https://github.com/IshanAapan/docify-frontend.git
   cd docify
   
 2️⃣ Install dependencies:
