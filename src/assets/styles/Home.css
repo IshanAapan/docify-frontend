@@ -18,6 +18,9 @@
     justify-content: center;
     overflow: hidden;
 }
+.home-heading{
+    font-size: 1.3rem!important;
+}
 
 .home-img img {
     width: 100%;
@@ -42,7 +45,8 @@ h1 {
     .container {
         display: flex;
         flex-direction: column;
-        height: 63vh;
+        /* height: 63vh; */
+        height: 80vh;
     }
 
     /* .leftHomeHeading{

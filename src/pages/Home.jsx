@@ -45,8 +45,8 @@ const Home = () => {
       <NavBar />
       <section className="container" id="home">
         <section className="leftHomeHeading">
-          <h1 className="page-heading">Your Health,</h1>
-          <h1 className="page-heading">Our Responsibility</h1>
+          <h1 className="page-heading home-heading">Your Health,</h1>
+          <h1 className="page-heading home-heading">Our Responsibility</h1>
           <p className="leftHomeText">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi ipsum
             praesentium sequi iste, labore maxime dolore excepturi quos
