@@ -46,13 +46,13 @@
 
 1️⃣ Clone the repository:
    https://github.com/IshanAapan/docify-frontend.git
-  cd docify
+  - cd docify
   
 2️⃣ Install dependencies:
-  npm install
+  - npm install
   
 3️⃣ Start the development server:
-  npm run dev
+  - npm run dev
 
 4️⃣ Backend repo link:- https://github.com/IshanAapan/docify-backend.git
   
