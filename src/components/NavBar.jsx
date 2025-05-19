@@ -1,5 +1,5 @@
+
 import { NavLink, useNavigate } from "react-router-dom";
-import { Link } from "react-scroll";
 import "../assets/styles/NavBar.css";
 import { FiMenu } from "react-icons/fi";
 import { useState } from "react";
@@ -20,9 +20,13 @@ const NavBar = () => {
     window.location.reload();
   };
 
+  const handleNavClick = (sectionId) => {
+    navigate("/", { state: { scrollTo: sectionId } });
+    setIconActive(false);
+  };
+
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
-  // console.log("token", token);
 
   return (
     <header>
@@ -33,7 +37,9 @@ const NavBar = () => {
 
         <ul className="nav-links">
           <li>
-            <Link to="home">Home</Link>
+            <a onClick={() => handleNavClick("home")} style={{ cursor: "pointer" }}>
+              Home
+            </a>
           </li>
           {role !== "doctor" && (
             <li>
@@ -45,7 +51,7 @@ const NavBar = () => {
               <li>
                 <NavLink to="/appointments">Appointments</NavLink>
               </li>
-              {role == "patient" && (
+              {role === "patient" && (
                 <li>
                   <NavLink to="/applyfordoctor">Apply for Doctor</NavLink>
                 </li>
@@ -58,14 +64,14 @@ const NavBar = () => {
             </>
           )}
           <li>
-            <Link to="aboutus" smooth={true} duration={500}>
+            <a onClick={() => handleNavClick("aboutus")} style={{ cursor: "pointer" }}>
               About Us
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to="contactus" smooth={true} duration={500}>
+            <a onClick={() => handleNavClick("contactus")} style={{ cursor: "pointer" }}>
               Contact Us
-            </Link>
+            </a>
           </li>
           {token && (
             <li>
@@ -83,6 +89,7 @@ const NavBar = () => {
           )}
         </ul>
       </nav>
+
       <div className="menu-icons">
         {!iconActive && (
           <FiMenu className="menu-open" onClick={() => setIconActive(true)} />
