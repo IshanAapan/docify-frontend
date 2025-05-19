@@ -59,7 +59,12 @@ const BookingAppointmenModal = ({ setModalOpen, doctor }) => {
       console.log("resp", resp);
       toast.success("Your Booking Successfully Completed");
     } catch (error) {
-      console.log("error", error);
+     console.log("error", error.response.status);
+      if (error.response.status === 400) {
+        toast.error("Time slot already booked");
+      } else if (error.response.status === 500) {
+        toast.error("Server Error");
+      }
 
     }
 
