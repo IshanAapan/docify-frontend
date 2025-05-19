@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import "../assets/styles/Footer.css";
 import { Link } from "react-scroll";
 
@@ -6,6 +6,14 @@ import { Link } from "react-scroll";
 const Footer = () => {
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role")
+
+const navigate = useNavigate();
+  // const [iconActive, setIconActive] = useState(false);
+  const handleNavClick = (sectionId) => {
+    navigate("/", { state: { scrollTo: sectionId } });
+    // setIconActive(false);
+  };
+  
   return (
     <div
       className="footer-container
@@ -27,7 +35,9 @@ const Footer = () => {
           <h4 className="links heading">LINKS</h4>
           <ul className="footer-links">
             <li>
-              <NavLink to="/">Home</NavLink>
+               <a onClick={() => handleNavClick("home")} style={{ cursor: "pointer" }}>
+                Home
+              </a>
             </li>
             {role !== "doctor" && (
               <li>
@@ -51,15 +61,15 @@ const Footer = () => {
                 )}
               </>
             )}
-            <li>
-              <Link to="aboutus" smooth={true} duration={500}>
+           <li>
+              <a onClick={() => handleNavClick("aboutus")} style={{ cursor: "pointer" }}>
                 About Us
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="contactus" smooth={true} duration={500}>
+              <a onClick={() => handleNavClick("contactus")} style={{ cursor: "pointer" }}>
                 Contact Us
-              </Link>
+              </a>
             </li>
             {token && (
               <li>
