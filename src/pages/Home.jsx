@@ -4,9 +4,11 @@ import "../assets/styles/AboutUS.css";
 import aboutImage from "../assets/images/AboutUS.jpg";
 import "../assets/styles/ContactUS.css";
 import Footer from "../components/Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import NavBar from "../components/NavBar";
+import { useLocation } from "react-router-dom";
+import { scroller } from "react-scroll";
 
 const Home = () => {
   const [formData, setFormData] = useState({
