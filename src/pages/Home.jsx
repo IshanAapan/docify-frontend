@@ -40,6 +40,19 @@ const Home = () => {
     }
   };
 
+
+   const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      scroller.scrollTo(location.state.scrollTo, {
+        duration: 800,
+        delay: 0,
+        smooth: "easeInOutQuart",
+      });
+    }
+  }, [location]);
+
   return (
     <>
       <NavBar />
